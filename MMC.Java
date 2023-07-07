@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HelloWolrd {
+public class JavaApplication45 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         
@@ -28,7 +28,7 @@ public class HelloWolrd {
                         System.out.print(numerosUsuario[i]);
                         System.out.print(" ");
                         
-                        if(i == numerosUsuario.length - 1){
+                        if(i == numerosUsuario.length-1){
                             System.out.print("|" + primo);
                             System.out.println();
                         }
@@ -49,10 +49,11 @@ public class HelloWolrd {
             System.out.print(" ");
             
             if(i == numerosUsuario.length - 1){
-                System.out.print("|" +mmc);
+                System.out.print("|");
                 System.out.println();
             }
         }
+        System.out.println("O MMC eh: " +mmc);
     }
     public static int[] numeros(Scanner in){
         System.out.print("Digite a quantidade de numeros que deseja: ");
