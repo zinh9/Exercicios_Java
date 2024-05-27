@@ -1,28 +1,33 @@
-public static void main(String[] args) {      
+import java.util.Scanner;
+
+public class letra_grande {
+
+	public static void main(String[] args) {      
         Scanner in = new Scanner (System.in);
         
-        //pedindo a frase para o usuario
+        // Mensagem pedindo ao usuário uma frase
         System.out.println("Digite sua frase: ");
-        String frase0=in.nextLine();
+        String fraseUsuario = in.nextLine();
         
-        //transformando todas as letras em minusculo
-        String frase=frase0.toLowerCase();
-        
-        char[] letra= new char[frase.length()];
-        String[][] letraTela= new String[frase.length()][];
+        // Transforma a frase em caracteres
+        String frase = fraseUsuario.toLowerCase();
+
+        char[] letra = new char[frase.length()];
+        String[][] letraTela = new String[frase.length()][];
         String[] esp = new String[6];
         esp[0]="  ";
         
-        //for para guardar letra por letra da frase pedida ao usuario em um vetor de char
-        //e atribuir à uma matrix de String um vetor onde contem os caracteres para aparecer na tela 
-        for(int i=0; i<frase.length();i++){
+        /* Loop for para atribuir esses caracteres à um array bidimensional
+         * e que vai printar a frase em "letra grande" como um conjunto de caracteres "x"
+         */
+        for(int i = 0; i < frase.length(); i++){
             letra[i] = frase.charAt(i);
-            letraTela[i]=comp(letra[i],i);  
+            letraTela[i] = comparar(letra[i]);  
         }
         
-        //for para mostrar as letras grandes na tela
-        for(int c=0;c<=5;c++){
-            for(int i=0;i<frase.length();i++){
+        // Loop for para printar a frase no console
+        for(int c = 0; c <= 5; c++){
+            for(int i = 0; i < frase.length(); i++){
                 System.out.print(letraTela[i][c]);
                 System.out.print(esp[0]);
             }
@@ -30,96 +35,69 @@ public static void main(String[] args) {
         }    
     }  
     
-    //funcao para atribuir à matrix os desenhos das letras usando comparação
-    public static String[] comp (char letra,int i){
-        String[] let=new String[1];
-       
-        if(letra==' '){        
-            let = esp();
-        }
-        if(letra=='a'){        
-            let = a();
-        }
-        if(letra=='b'){        
-            let = b();
-        }
-        if(letra=='c'){        
-            let = c();
-        }
-        if(letra=='d'){        
-            let = d();
-        }
-        if(letra=='e'){        
-            let = e();
-        }
-        if(letra=='f'){        
-            let = f();
-        }
-        if(letra=='g'){        
-            let = g();
-        }
-        if(letra=='h'){        
-            let = h();
-        }
-        if(letra=='i'){        
-            let = i();
-        }
-        if(letra=='j'){        
-            let = j();
-        }
-        if(letra=='k'){        
-            let = k();
-        }
-        if(letra=='l'){        
-            let = l();
-        }
-        if(letra=='m'){        
-            let = m();
-        }
-        if(letra=='n'){        
-            let = n();
-        }
-        if(letra=='o'){        
-            let = o();
-        }
-        if(letra=='p'){        
-            let = p();
-        }
-        if(letra=='q'){        
-            let = q();
-        }
-        if(letra=='r'){        
-            let = r();
-        }
-        if(letra=='s'){        
-            let = s();
-        }
-        if(letra=='t'){        
-            let = t();
-        }
-        if(letra=='u'){        
-            let = u();
-        }
-        if(letra=='v'){        
-            let = v();
-        }
-        if(letra=='w'){        
-            let = w();
-        }
-        if(letra=='x'){        
-            let = x();
-        }
-        if(letra=='y'){        
-            let = y();
-        }
-        if(letra=='z'){        
-            let = z();
-        }
-
-        return let;
+    // Método para atribuir o formato da letra
+    public static String[] comparar (char letra){
+    	switch (letra) {
+        case ' ':
+            return esp();
+        case 'a':
+            return a();
+        case 'b':
+            return b();
+        case 'c':
+            return c();
+        case 'd':
+            return d();
+        case 'e':
+            return e();
+        case 'f':
+            return f();
+        case 'g':
+            return g();
+        case 'h':
+            return h();
+        case 'i':
+            return i();
+        case 'j':
+            return j();
+        case 'k':
+            return k();
+        case 'l':
+            return l();
+        case 'm':
+            return m();
+        case 'n':
+            return n();
+        case 'o':
+            return o();
+        case 'p':
+            return p();
+        case 'q':
+            return q();
+        case 'r':
+            return r();
+        case 's':
+            return s();
+        case 't':
+            return t();
+        case 'u':
+            return u();
+        case 'v':
+            return v();
+        case 'w':
+            return w();
+        case 'x':
+            return x();
+        case 'y':
+            return y();
+        case 'z':
+            return z();
+        default:
+            return new String[6];
+    	}
     }
     
-    //função onde estão guardados os desenhos das letras
+    // Método que contém a estrutura de cada caracter 
     public static String[] esp (){
         String[] esp = new String[6];
        
@@ -137,11 +115,11 @@ public static void main(String[] args) {
         String[] a = new String[6];
        
         a[0]="  xxx  ";
-        a[1]=" xx xx ";
-        a[2]="xx   xx";
+        a[1]=" x   x ";
+        a[2]="x     x";
         a[3]="xxxxxxx";
-        a[4]="xx   xx";
-        a[5]="xx   xx";
+        a[4]="x     x";
+        a[5]="x     x";
 
         return a;
     }
@@ -445,3 +423,5 @@ public static void main(String[] args) {
 
         return z;
     }
+
+}
